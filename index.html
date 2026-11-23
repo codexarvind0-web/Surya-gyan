@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>सूर्य ज्ञान दीप अकैडमी | नर्सरी से कक्षा 8 तक</title>
+<meta name="description" content="सूर्य ज्ञान दीप अकैडमी, गोविंदपुर, बलिया। संस्कार, शिक्षा और उज्ज्वल भविष्य की ओर एक कदम।">
+<meta name="theme-color" content="#071a52">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Rozha+One&family=Hind:wght@400;500;600;700&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--blue:#0f3aa8;
+--blue2:#1d5bd8;
+--navy:#071a52;
+--navy2:#040f33;
+--gold:#ffc61a;
+--gold2:#ff9f0a;
+--red:#e63946;
+--green:#14a35c;
+--bg:#f4f7ff;
+--shadow:0 18px 50px rgba(7,26,82,.16);
+--display:'Yatra One','Rozha One',serif;
+--head:'Rozha One','Yatra One',serif;
+--ui:'Baloo 2','Hind',sans-serif;
+--body:'Hind',sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+font-family:var(--body);
+color:var(--navy);
+background:var(--bg);
+line-height:1.75;
+overflow-x:hidden;
+font-size:17px;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+section{padding:85px 0;position:relative}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+.gold{
+background:linear-gradient(180deg,#fff3b0,#ffc61a 45%,#ff9f0a);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+.blue-grad{
+background:linear-gradient(120deg,var(--blue),var(--blue2),#0aa27a);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+background:radial-gradient(circle at 50% 40%,#1d4fc4,var(--navy2));
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:18px;
+z-index:9999;
+transition:.7s;
+color:white;
+font-family:var(--display);
+font-size:1.5rem;
+text-align:center;
+}
+#loader.hide{opacity:0;visibility:hidden}
+.sun-l{
+width:90px;height:90px;
+border-radius:50%;
+background:radial-gradient(circle,#fff6b8,#ffc61a 55%,#ff9f0a);
+box-shadow:0 0 0 12px rgba(255,198,26,.2),0 0 60px 20px rgba(255,198,26,.5);
+animation:pulse 1.4s infinite;
+}
+@keyframes pulse{50%{transform:scale(1.12)}}
+
+#prog{
+position:fixed;
+top:0;left:0;
+height:4px;width:0;
+background:linear-gradient(90deg,var(--red),var(--gold),var(--green));
+z-index:200;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(4,15,51,.92);
+backdrop-filter:blur(14px);
+box-shadow:0 8px 30px rgba(0,0,0,.35);
+border-bottom:2px solid rgba(255,198,26,.6);
+}
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:72px;
+}
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-family:var(--display);
+font-size:1.2rem;
+color:white;
+}
+.logo .ic{
+width:46px;height:46px;
+border-radius:14px;
+background:linear-gradient(135deg,var(--gold),var(--gold2));
+display:grid;
+place-items:center;
+font-size:1.4rem;
+}
+.menu{display:flex;gap:4px;list-style:none}
+.menu a{
+font-family:var(--ui);
+font-weight:700;
+padding:8px 14px;
+border-radius:40px;
+transition:.3s;
+color:#e6edff;
+}
+.menu a:hover,.menu a.active{
+background:linear-gradient(135deg,#ffe066,var(--gold2));
+color:var(--navy2);
+}
+.burger{
+display:none;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.3);
+width:46px;height:46px;
+border-radius:14px;
+cursor:pointer;
+flex-direction:column;
+gap:5px;
+align-items:center;
+justify-content:center;
+}
+.burger span{
+width:22px;height:3px;
+background:white;
+border-radius:3px;
+transition:.3s;
+}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* HERO */
+
+.hero{
+padding:70px 0 100px;
+overflow:hidden;
+background:
+radial-gradient(circle at 78% 32%,rgba(255,198,26,.5),transparent 40%),
+radial-gradient(circle at 8% 85%,rgba(20,163,92,.4),transparent 42%),
+radial-gradient(circle at 30% 10%,rgba(29,91,216,.6),transparent 50%),
+linear-gradient(160deg,#0a2270,#071a52 55%,#040f33);
+}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background-image:radial-gradient(rgba(255,255,255,.14) 1.4px,transparent 1.4px);
+background-size:34px 34px;
+pointer-events:none;
+}
+.rays{
+position:absolute;
+right:-220px;top:-260px;
+width:760px;height:760px;
+border-radius:50%;
+background:repeating-conic-gradient(rgba(255,214,90,.2) 0 5deg,transparent 5deg 15deg);
+animation:spin 90s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.float{
+position:absolute;
+font-size:2rem;
+z-index:1;
+animation:floaty 7s ease-in-out infinite;
+}
+.f1{left:3%;top:16%}
+.f2{left:44%;top:7%}
+.f3{right:5%;bottom:20%}
+.f4{left:6%;bottom:16%}
+.f5{right:40%;bottom:12%}
+@keyframes floaty{50%{transform:translateY(-20px) rotate(10deg)}}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:50px;
+align-items:center;
+position:relative;
+z-index:2;
+color:white;
+}
+.badge{
+display:inline-flex;
+padding:7px 20px;
+border-radius:40px;
+background:rgba(255,198,26,.14);
+border:1px solid rgba(255,198,26,.6);
+color:var(--gold);
+margin-bottom:18px;
+font-family:var(--ui);
+font-weight:700;
+}
+.hero h1{
+font-family:var(--display);
+font-weight:400;
+font-size:clamp(2.7rem,8.4vw,5.6rem);
+line-height:1.2;
+}
+.hero h1 .gold{display:block}
+.tag{
+font-family:var(--head);
+font-size:clamp(1.2rem,3.4vw,1.7rem);
+margin:16px 0 8px;
+}
+.sub{
+font-family:var(--ui);
+font-weight:600;
+color:#cfe0ff;
+}
+.classes-pill{
+display:inline-block;
+margin:20px 0 16px;
+background:linear-gradient(135deg,#ff4b5c,var(--red));
+padding:10px 30px;
+border-radius:16px;
+font-family:var(--display);
+font-size:1.5rem;
+box-shadow:0 12px 28px rgba(230,57,70,.55);
+}
+.welcome{
+max-width:540px;
+padding:16px 20px;
+border-radius:20px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.22);
+margin-bottom:28px;
+color:#dbe7ff;
+}
+.btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{
+font-family:var(--ui);
+font-weight:700;
+font-size:1.1rem;
+padding:14px 34px;
+border-radius:50px;
+border:0;
+cursor:pointer;
+transition:.35s;
+display:inline-block;
+}
+.btn-y{
+background:linear-gradient(135deg,#ffe066,var(--gold2));
+color:var(--navy2);
+box-shadow:0 12px 28px rgba(255,159,10,.5);
+}
+.btn-y:hover{transform:translateY(-5px)}
+.btn-w{
+background:transparent;
+color:white;
+border:2px solid white;
+}
+.btn-w:hover{background:white;color:var(--navy)}
+
+.photo-wrap{
+position:relative;
+display:grid;
+place-items:center;
+padding:20px;
+}
+.ring{
+position:absolute;
+width:min(430px,94vw);
+aspect-ratio:1;
+border-radius:50%;
+border:3px dashed rgba(255,214,90,.8);
+animation:spin 40s linear infinite;
+}
+.ring2{
+position:absolute;
+width:min(480px,100vw);
+aspect-ratio:1;
+border-radius:50%;
+border:2px solid rgba(255,255,255,.2);
+}
+.photo-frame{
+position:relative;
+width:min(350px,78vw);
+aspect-ratio:1;
+border-radius:50%;
+padding:9px;
+background:conic-gradient(#ffe066,#ff9f0a,#fff3b0,#ffc61a);
+box-shadow:0 30px 70px rgba(0,0,0,.6);
+}
+.photo-frame img{
+width:100%;height:100%;
+object-fit:cover;
+object-position:center 22%;
+border-radius:50%;
+border:5px solid white;
+}
+.chip{
+position:absolute;
+font-family:var(--ui);
+font-weight:700;
+font-size:.95rem;
+background:white;
+color:var(--navy);
+padding:8px 18px;
+border-radius:40px;
+box-shadow:0 14px 30px rgba(0,0,0,.4);
+animation:floaty 6s infinite;
+white-space:nowrap;
+}
+.chip.c1{bottom:6%;left:0}
+.chip.c2{top:8%;right:-2%;background:var(--gold)}
+
+/* POSTER SECTION - NEW */
+
+.poster-section{
+padding:35px 0;
+background:linear-gradient(180deg,#071a52,#f4f7ff);
+}
+.poster-container{
+width:min(950px,94%);
+margin:auto;
+border:5px solid var(--gold);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(7,26,82,.25);
+background:white;
+}
+.poster-container img{
+width:100%;
+height:auto;
+display:block;
+object-fit:contain;
+}
+
+/* MARQUEE */
+
+.marquee{
+background:linear-gradient(90deg,var(--gold2),var(--gold),var(--gold2));
+color:var(--navy2);
+overflow:hidden;
+white-space:nowrap;
+padding:14px 0;
+font-family:var(--display);
+font-size:1.35rem;
+}
+.track{
+display:inline-flex;
+gap:46px;
+animation:slide 26s linear infinite;
+padding-left:46px;
+}
+.track span::after{
+content:"✦";
+margin-left:46px;
+}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* SECTION TITLES */
+
+.sec-title{text-align:center;margin-bottom:55px}
+.sec-title h2{
+font-family:var(--head);
+font-size:clamp(2rem,5.5vw,3.2rem);
+font-weight:400;
+line-height:1.3;
+}
+.orn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+margin-top:8px;
+color:var(--gold2);
+}
+.orn::before,.orn::after{
+content:"";
+height:3px;width:70px;
+background:linear-gradient(90deg,transparent,var(--gold2));
+}
+.orn::after{transform:scaleX(-1)}
+
+.dark{
+color:white;
+background:
+radial-gradient(circle at 15% 0%,rgba(29,91,216,.45),transparent 45%),
+linear-gradient(180deg,var(--navy),var(--navy2));
+}
+.dark::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:radial-gradient(rgba(255,255,255,.09) 1.4px,transparent 1.4px);
+background-size:32px 32px;
+pointer-events:none;
+}
+.dark>.container{position:relative;z-index:2}
+.light{background:var(--bg)}
+.light.alt{background:linear-gradient(180deg,#fff,#eaf0ff)}
+
+/* STATS */
+
+.stats{padding:55px 0 0;background:var(--bg)}
+.stat-row{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+.stat{
+background:white;
+border-radius:26px;
+padding:26px 14px;
+text-align:center;
+box-shadow:var(--shadow);
+border-bottom:6px solid var(--gold);
+}
+.stat:nth-child(2){border-bottom-color:var(--red)}
+.stat:nth-child(3){border-bottom-color:var(--green)}
+.stat b{
+display:block;
+font-family:var(--display);
+font-size:clamp(2rem,6vw,3.4rem);
+line-height:1.2;
+}
+.stat span{font-family:var(--ui);font-weight:600}
+
+/* ABOUT */
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1.05fr;
+gap:56px;
+align-items:center;
+}
+.about-art{
+position:relative;
+border-radius:36px;
+padding:46px 30px;
+text-align:center;
+background:linear-gradient(145deg,#fff6cf,#dfeaff);
+box-shadow:var(--shadow);
+}
+.about-art .big{font-size:6.5rem}
+.about-art .row{
+display:flex;
+justify-content:center;
+gap:18px;
+font-size:2.4rem;
+margin-top:8px;
+}
+.about-art p{
+margin-top:16px;
+font-family:var(--head);
+font-size:1.5rem;
+color:var(--blue);
+}
+.about-text p{margin-bottom:16px;font-size:1.1rem}
+.about-text strong{
+font-family:var(--head);
+font-size:1.3rem;
+color:var(--blue);
+}
+.points{
+list-style:none;
+margin-top:8px;
+display:grid;
+gap:10px;
+}
+.points li{
+display:flex;
+gap:12px;
+align-items:center;
+font-family:var(--ui);
+font-weight:600;
+background:white;
+padding:10px 16px;
+border-radius:16px;
+box-shadow:0 6px 18px rgba(7,26,82,.08);
+border-left:5px solid var(--green);
+}
+.points li:nth-child(2){border-color:var(--gold2)}
+.points li:nth-child(3){border-color:var(--red)}
+.points li:nth-child(4){border-color:var(--blue2)}
+
+/* CLASSES */
+
+.class-wrap{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:18px;
+}
+.class-card{
+position:relative;
+border-radius:26px;
+padding:22px 8px 18px;
+text-align:center;
+color:white;
+box-shadow:0 16px 36px rgba(0,0,0,.35);
+transition:.4s;
+font-family:var(--ui);
+font-weight:700;
+border:1px solid rgba(255,255,255,.22);
+overflow:hidden;
+}
+.class-card .n{
+display:block;
+font-family:var(--display);
+font-size:2.6rem;
+line-height:1.1;
+}
+.class-card small{display:block;font-size:1.05rem}
+.class-card:hover{transform:translateY(-10px) rotate(-2deg)}
+.k0{background:linear-gradient(145deg,#ff5a67,#c92a3a)}
+.k1{background:linear-gradient(145deg,#3b82ff,#0f3aa8)}
+.k2{background:linear-gradient(145deg,#2cc47a,#0b7d43)}
+.k3{background:linear-gradient(145deg,#ffd23f,#f08c00);color:#071a52}
+.class-note{
+text-align:center;
+margin-top:40px;
+font-family:var(--display);
+font-size:clamp(1.5rem,4vw,2.2rem);
+}
+
+/* SUBJECTS */
+
+.sub-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:24px;
+}
+.sub-card{
+border-radius:30px;
+padding:36px 20px 30px;
+text-align:center;
+color:white;
+box-shadow:var(--shadow);
+transition:.4s;
+}
+.sub-card:hover{transform:translateY(-12px) scale(1.03)}
+.sub-card .ico{
+width:92px;height:92px;
+margin:0 auto 14px;
+border-radius:50%;
+background:rgba(255,255,255,.22);
+display:grid;
+place-items:center;
+font-size:3rem;
+}
+.sub-card h3{
+font-family:var(--display);
+font-weight:400;
+font-size:1.9rem;
+}
+.sub-card span{font-family:var(--ui);font-weight:600}
+.s1{background:linear-gradient(145deg,#3b82ff,#0f3aa8)}
+.s2{background:linear-gradient(145deg,#ff5a67,#c92a3a)}
+.s3{background:linear-gradient(145deg,#2cc47a,#0b7d43)}
+.s4{background:linear-gradient(145deg,#ffd23f,#f08c00);color:#071a52}
+.s5{background:linear-gradient(145deg,#1b3a9e,#071a52)}
+
+/* FEATURES */
+
+.feat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+gap:28px;
+}
+.feat{
+position:relative;
+background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+border:1px solid rgba(255,255,255,.22);
+border-radius:30px;
+padding:50px 28px 36px;
+text-align:center;
+margin-top:40px;
+}
+.feat .ico{
+position:absolute;
+top:-40px;left:50%;
+transform:translateX(-50%);
+width:84px;height:84px;
+border-radius:26px;
+background:linear-gradient(135deg,#ffe066,var(--gold2));
+display:grid;
+place-items:center;
+font-size:2.3rem;
+}
+.feat p{
+font-family:var(--head);
+font-size:1.3rem;
+color:white;
+}
+.highlights{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+justify-content:center;
+margin-top:52px;
+}
+.hl{
+font-family:var(--display);
+font-size:1.25rem;
+color:white;
+padding:10px 30px;
+border-radius:50px;
+background:linear-gradient(135deg,var(--blue2),var(--blue));
+}
+.hl:nth-child(2){background:linear-gradient(135deg,#ff5a67,var(--red))}
+.hl:nth-child(3){background:linear-gradient(135deg,#2cc47a,var(--green))}
+
+/* TIMING */
+
+.timing{
+background:linear-gradient(135deg,#fff7d6,#eaf1ff);
+}
+.time-box{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+background:linear-gradient(135deg,var(--navy),var(--blue));
+color:white;
+border-radius:40px;
+padding:44px 30px;
+max-width:840px;
+margin:auto;
+box-shadow:0 30px 70px rgba(7,26,82,.35);
+}
+.clock{
+width:190px;height:190px;
+border-radius:50%;
+background:white;
+border:12px solid var(--gold);
+position:relative;
+}
+.clock .tick{
+position:absolute;
+left:50%;top:0;
+width:4px;height:100%;
+margin-left:-2px;
+}
+.clock .tick::before{
+content:"";
+position:absolute;
+top:6px;
+width:4px;height:12px;
+background:var(--navy);
+}
+.clock i{
+position:absolute;
+left:50%;bottom:50%;
+transform-origin:bottom;
+border-radius:4px;
+}
+.clock .h{
+width:7px;height:48px;
+margin-left:-3.5px;
+background:var(--navy);
+transform:rotate(90deg);
+}
+.clock .m{
+width:5px;height:68px;
+margin-left:-2.5px;
+background:var(--blue2);
+transform:rotate(180deg);
+}
+.clock .s{
+width:2px;height:74px;
+margin-left:-1px;
+background:var(--red);
+}
+.clock::after{
+content:"";
+position:absolute;
+width:18px;height:18px;
+border-radius:50%;
+background:var(--gold);
+border:4px solid var(--navy);
+left:50%;top:50%;
+transform:translate(-50%,-50%);
+}
+.time-text{text-align:center}
+.time-text .big{
+font-family:var(--display);
+font-size:clamp(2.4rem,8vw,4.2rem);
+line-height:1.25;
+}
+.time-text p{
+font-family:var(--head);
+font-size:1.4rem;
+margin-top:6px;
+}
+
+/* TEACHER */
+
+.t-card{
+max-width:860px;
+margin:auto;
+display:grid;
+grid-template-columns:auto 1fr;
+gap:46px;
+align-items:center;
+padding:44px;
+border-radius:44px;
+background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+border:1px solid rgba(255,255,255,.22);
+box-shadow:0 30px 70px rgba(0,0,0,.5);
+}
+.t-photo{
+width:250px;height:250px;
+border-radius:50%;
+padding:8px;
+background:conic-gradient(var(--blue2),var(--gold),var(--green),var(--red),var(--blue2));
+}
+.t-photo img{
+width:100%;height:100%;
+object-fit:cover;
+object-position:center 22%;
+border-radius:50%;
+border:6px solid white;
+}
+.t-info h3{
+font-family:var(--display);
+font-weight:400;
+font-size:2.1rem;
+}
+.t-info p{
+margin-top:10px;
+font-size:1.1rem;
+color:#dbe7ff;
+}
+.t-info .q{
+font-family:var(--head);
+font-size:1.4rem;
+color:var(--gold);
+}
+
+/* MOTTO */
+
+.motto-sec{
+padding:120px 0;
+text-align:center;
+color:white;
+overflow:hidden;
+background:var(--navy);
+}
+.motto-bg{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+}
+.motto-sec::before{
+content:"";
+position:absolute;
+inset:0;
+z-index:1;
+background:linear-gradient(180deg,rgba(7,26,82,.85),rgba(15,58,168,.55),rgba(7,26,82,.9));
+}
+.motto-sec .container{position:relative;z-index:2}
+.motto{
+font-family:var(--display);
+font-size:clamp(2rem,6.4vw,3.8rem);
+line-height:1.6;
+}
+.motto .w{color:white}
+
+/* CONTACT */
+
+.addr-card{
+max-width:680px;
+margin:50px auto 0;
+background:white;
+border-radius:36px;
+padding:70px 30px 36px;
+box-shadow:var(--shadow);
+text-align:center;
+position:relative;
+border-top:8px solid var(--gold);
+}
+.addr-card .pin{
+position:absolute;
+top:-52px;left:50%;
+transform:translateX(-50%);
+width:92px;height:92px;
+border-radius:50%;
+background:linear-gradient(135deg,#ff5a67,var(--red));
+display:grid;
+place-items:center;
+font-size:2.6rem;
+}
+.addr-card address{
+font-style:normal;
+font-family:var(--head);
+font-size:1.6rem;
+line-height:1.9;
+color:var(--blue);
+}
+.addr-card .mini{
+margin-top:18px;
+display:inline-block;
+padding:8px 22px;
+background:#fff9e6;
+border-radius:40px;
+font-family:var(--ui);
+font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+background:linear-gradient(180deg,var(--navy),var(--navy2));
+color:white;
+text-align:center;
+padding:60px 0 0;
+border-top:6px solid var(--gold);
+}
+footer h3{
+font-family:var(--display);
+font-weight:400;
+font-size:2.2rem;
+}
+footer .ft-tag{
+font-family:var(--head);
+font-size:1.2rem;
+margin:6px 0 14px;
+}
+.ft-hl{
+font-family:var(--ui);
+font-weight:700;
+color:var(--gold);
+font-size:1.1rem;
+}
+.ft-links{
+display:flex;
+flex-wrap:wrap;
+gap:8px 22px;
+justify-content:center;
+margin:22px 0;
+}
+.ft-links a:hover{color:var(--gold)}
+.copy{
+margin-top:30px;
+padding:18px;
+background:#02081f;
+}
+
+/* ANIMATIONS */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:opacity .8s,transform .8s;
+}
+.reveal.show{
+opacity:1;
+transform:none;
+}
+.d1{transition-delay:.1s}
+.d2{transition-delay:.2s}
+.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}
+
+#top{
+position:fixed;
+right:18px;bottom:18px;
+width:50px;height:50px;
+border-radius:50%;
+border:0;
+background:linear-gradient(135deg,#ffe066,var(--gold2));
+color:var(--navy2);
+font-size:1.4rem;
+font-weight:800;
+cursor:pointer;
+box-shadow:0 12px 26px rgba(255,159,10,.55);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:90;
+}
+#top.show{opacity:1;visibility:visible}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:900px){
+.burger{display:flex}
+.menu{
+position:absolute;
+top:72px;left:0;right:0;
+background:rgba(4,15,51,.98);
+flex-direction:column;
+padding:0 5%;
+gap:4px;
+max-height:0;
+overflow:hidden;
+transition:max-height .45s,padding .45s;
+}
+.menu.open{
+max-height:480px;
+padding:14px 5%;
+}
+.menu a{display:block}
+.hero{padding:44px 0 90px;text-align:center}
+.hero-grid,.about-grid{grid-template-columns:1fr}
+.photo-wrap{order:-1}
+.welcome{margin-inline:auto}
+.btns{justify-content:center}
+.t-card{
+grid-template-columns:1fr;
+text-align:center;
+justify-items:center;
+padding:36px 24px;
+}
+section{padding:66px 0}
+.motto-sec{padding:90px 0}
+.stat-row{gap:10px}
+.stat{padding:18px 6px}
+.logo{font-size:1rem}
+}
+
+@media(max-width:480px){
+.chip{font-size:.8rem;padding:6px 12px}
+.time-box{gap:26px;padding:30px 16px}
+.poster-container{border-width:3px;border-radius:14px}
+}
+
+@media(prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+<div class="sun-l"></div>
+<div>सूर्य ज्ञान दीप अकैडमी</div>
+</div>
+
+<div id="prog"></div>
+
+<header>
+<div class="container nav">
+
+<a href="#home" class="logo">
+<span class="ic">📖</span>
+<span>सूर्य ज्ञान दीप अकैडमी</span>
+</a>
+
+<button class="burger" id="burger" aria-label="मेन्यू खोलें" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+
+<ul class="menu" id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#subjects">Subjects</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#timing">Timing</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+<div class="rays"></div>
+
+<span class="float f1">📚</span>
+<span class="float f2">⭐</span>
+<span class="float f3">✏️</span>
+<span class="float f4">🎓</span>
+<span class="float f5">💡</span>
+
+<div class="container hero-grid">
+
+<div>
+
+<span class="badge">🌅 आपका हार्दिक स्वागत है</span>
+
+<h1>
+सूर्य ज्ञान दीप
+<span class="gold">अकैडमी</span>
+</h1>
+
+<p class="tag">संस्कार, शिक्षा और उज्ज्वल भविष्य की ओर एक कदम।</p>
+
+<p class="sub">बुनियादी शिक्षा • बेहतर संस्कार • उज्ज्वल भविष्य</p>
+
+<div class="classes-pill">नर्सरी से कक्षा 8 तक।</div>
+
+<p class="welcome">
+हमारी अकैडमी में आपके बच्चे की बुनियादी शिक्षा मज़बूत होती है, सरल तरीके से, नियमित कक्षाओं और व्यक्तिगत मार्गदर्शन के साथ।
+</p>
+
+<div class="btns">
+<a href="#subjects" class="btn btn-y">Explore Subjects</a>
+<a href="#contact" class="btn btn-w">Contact Us</a>
+</div>
+
+</div>
+
+<div class="photo-wrap">
+
+<div class="ring2"></div>
+<div class="ring"></div>
+
+<div class="photo-frame">
+<img data-photo alt="अकैडमी के शिक्षक">
+</div>
+
+<span class="chip c1">👨‍🏫 अनुभवी शिक्षक</span>
+<span class="chip c2">⭐ उत्कृष्ट परिणाम</span>
+
+</div>
+
+</div>
+</section>
+
+<!-- NEW POSTER: FRONT PAGE KE JUST NICHE -->
+
+<section class="poster-section" id="academy-poster">
+
+<div class="poster-container reveal">
+<img
+src="IMG_20261122_163307.jpg"
+alt="सूर्य ज्ञान दीप अकैडमी का पोस्टर"
+loading="eager">
+</div>
+
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee" aria-hidden="true">
+<div class="track">
+<span>संस्कार</span>
+<span>शिक्षा</span>
+<span>उज्ज्वल भविष्य</span>
+<span>छोटे कदम, बड़ी सफलता</span>
+<span>सही शिक्षा, सफल भविष्य</span>
+<span>संस्कार</span>
+<span>शिक्षा</span>
+<span>उज्ज्वल भविष्य</span>
+<span>छोटे कदम, बड़ी सफलता</span>
+<span>सही शिक्षा, सफल भविष्य</span>
+</div>
+</div>
+
+<!-- STATS -->
+
+<section class="stats">
+<div class="container stat-row">
+
+<div class="stat reveal">
+<b class="blue-grad"><span data-count="5">5</span></b>
+<span>विषय</span>
+</div>
+
+<div class="stat reveal d1">
+<b class="blue-grad"><span data-count="9">9</span></b>
+<span>कक्षाएँ</span>
+</div>
+
+<div class="stat reveal d2">
+<b class="blue-grad"><span data-count="2">2</span></b>
+<span>घंटे रोज़</span>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="light" id="about">
+<div class="container">
+
+<div class="sec-title reveal">
+<h2 class="blue-grad">हमारे बारे में</h2>
+<div class="orn">❖</div>
+</div>
+
+<div class="about-grid">
+
+<div class="about-art reveal">
+<div class="big">🏫</div>
+<div class="row">
+<span>📘</span>
+<span>✏️</span>
+<span>🌟</span>
+<span>🎒</span>
+</div>
+<p>छोटे कदम...<br>बड़ी सफलता की ओर...</p>
+</div>
+
+<div class="about-text reveal d2">
+
+<p>
+<strong>सूर्य ज्ञान दीप अकैडमी</strong> एक शैक्षणिक संस्थान है, जो बच्चों की बुनियादी शिक्षा पर विशेष ध्यान देता है। यहाँ हर बच्चे पर व्यक्तिगत ध्यान दिया जाता है।
+</p>
+
+<p>
+हम पढ़ाई को सरल तरीके से समझाते हैं, ताकि बच्चे की नींव मज़बूत बने और संस्कारों के साथ उसका भविष्य उज्ज्वल हो।
+</p>
+
+<ul class="points">
+<li><i>📘</i> बच्चों की बुनियादी शिक्षा पर फोकस</li>
+<li><i>👁️</i> हर बच्चे पर व्यक्तिगत ध्यान</li>
+<li><i>💬</i> सरल तरीके से पढ़ाई</li>
+<li><i>🗓️</i> नियमित कक्षाएँ एवं व्यक्तिगत मार्गदर्शन</li>
+</ul>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- CLASSES -->
+
+<section class="dark" id="classes">
+<div class="container">
+
+<div class="sec-title reveal">
+<h2 class="gold">हमारी कक्षाएँ</h2>
+<div class="orn">❖</div>
+</div>
+
+<div class="class-wrap" id="classWrap"></div>
+
+<p class="class-note reveal gold">नर्सरी से कक्षा 8 तक।</p>
+
+</div>
+</section>
+
+<!-- SUBJECTS -->
+
+<section class="light alt" id="subjects">
+<div class="container">
+
+<div class="sec-title reveal">
+<h2 class="blue-grad">हमारे विषय</h2>
+<div class="orn">❖</div>
+</div>
+
+<div class="sub-grid">
+
+<div class="sub-card s1 reveal">
+<div class="ico">➕</div>
+<h3>गणित</h3>
+<span>Mathematics</span>
+</div>
+
+<div class="sub-card s2 reveal d1">
+<div class="ico">📖</div>
+<h3>हिंदी</h3>
+<span>Hindi</span>
+</div>
+
+<div class="sub-card s3 reveal d2">
+<div class="ico">🔤</div>
+<h3>अंग्रेजी</h3>
+<span>English</span>
+</div>
+
+<div class="sub-card s4 reveal d3">
+<div class="ico">💡</div>
+<h3>बेसिक GK</h3>
+<span>Basic General Knowledge</span>
+</div>
+
+<div class="sub-card s5 reveal d4">
+<div class="ico">🌍</div>
+<h3>सामान्य ज्ञान</h3>
+<span>(G.S.)</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FEATURES -->
+
+<section class="dark" id="features">
+<div class="container">
+
+<div class="sec-title reveal">
+<h2 class="gold">हमारी विशेषताएँ</h2>
+<div class="orn">❖</div>
+</div>
+
+<div class="feat-grid">
+
+<div class="feat reveal">
+<div class="ico">🎯</div>
+<p>बच्चों की कमजोरियों पर विशेष ध्यान।</p>
+</div>
+
+<div class="feat reveal d2">
+<div class="ico">🧩</div>
+<p>बेसिक से पढ़ाई एवं सरल तरीके से समझाना।</p>
+</div>
+
+<div class="feat reveal d3">
+<div class="ico">🤝</div>
+<p>नियमित कक्षाएँ एवं व्यक्तिगत मार्गदर्शन।</p>
+</div>
+
+</div>
+
+<div class="highlights reveal">
+<span class="hl">अनुभवी शिक्षक</span>
+<span class="hl">नियमित अध्ययन</span>
+<span class="hl">उत्कृष्ट परिणाम</span>
+</div>
+
+</div>
+</section>
+
+<!-- TIMING -->
+
+<section class="timing" id="timing">
+<div class="container">
+
+<div class="sec-title reveal">
+<h2 class="blue-grad">कक्षा का समय</h2>
+<div class="orn">❖</div>
+</div>
+
+<div class="time-box reveal">
+
+<div class="clock" aria-hidden="true">
+<span class="tick"></span>
+<span class="tick" style="transform:rotate(90deg)"></span>
+<span class="tick" style="transform:rotate(180deg)"></span>
+<span class="tick" style="transform:rotate(270deg)"></span>
+<i class="h"></i>
+<i class="m"></i>
+<i class="s"></i>
+</div>
+
+<div class="time-text">
+<div class="big gold">3:00 PM – 5:00 PM</div>
+<p>दोपहर 3 बजे से शाम 5 बजे तक।</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TEACHER -->
+
+<section class="dark" id="teacher">
+<div class="container">
+
+<div class="sec-title reveal">
+<h2 class="gold">हमारे शिक्षक</h2>
+<div class="orn">❖</div>
+</div>
+
+<div class="t-card reveal">
+
+<div class="t-photo">
+<img data-photo alt="अकैडमी के शिक्षक">
+</div>
+
+<div class="t-info">
+<h3 class="gold">अनुभवी शिक्षक</h3>
+<p>
+बच्चों की बुनियादी शिक्षा, सरल तरीके से पढ़ाई और व्यक्तिगत मार्गदर्शन के लिए समर्पित।
+</p>
+<p class="q">सही शिक्षा... सफल भविष्य...</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MOTTO -->
+
+<section class="motto-sec" id="motto">
+
+<div class="motto-bg" id="mottoBg"></div>
+
+<div class="container">
+
+<p class="motto reveal">
+<span class="gold">छोटे कदम...</span><br>
+<span class="w">बड़ी सफलता की ओर...</span><br>
+<span class="gold">सही शिक्षा...</span><br>
+<span class="w">सफल भविष्य...</span>
+</p>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="light alt" id="contact">
+<div class="container">
+
+<div class="sec-title reveal">
+<h2 class="blue-grad">हमसे संपर्क करें</h2>
+<div class="orn">❖</div>
+</div>
+
+<div class="addr-card reveal">
+
+<div class="pin">📍</div>
+
+<address>
+ग्राम गोविंदपुर,<br>
+पोस्ट गड़वार,<br>
+जिला बलिया,<br>
+उत्तर प्रदेश।
+</address>
+
+<span class="mini">
+🕒 दोपहर 3:00 PM से शाम 5:00 PM तक
+</span>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+
+<h3 class="gold">सूर्य ज्ञान दीप अकैडमी</h3>
+
+<p class="ft-tag">
+संस्कार, शिक्षा और उज्ज्वल भविष्य की ओर एक कदम।
+</p>
+
+<p class="ft-hl">
+अनुभवी शिक्षक | नियमित अध्ययन | उत्कृष्ट परिणाम
+</p>
+
+<nav class="ft-links" aria-label="Footer">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#classes">Classes</a>
+<a href="#subjects">Subjects</a>
+<a href="#features">Features</a>
+<a href="#timing">Timing</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+
+<div class="copy">
+© <span id="yr">2026</span> सूर्य ज्ञान दीप अकैडमी। सर्वाधिकार सुरक्षित।
+</div>
+</footer>
+
+<button id="top" aria-label="ऊपर जाएँ">↑</button>
+
+<script>
+(function(){
+
+/* PHOTO SETTINGS */
+
+var POSTER_PHOTO = "IMG_20261122_101751_908.jpg";
+
+var TEACHER_PREFIX = "IMG_20261122_101447_8";
+
+var TEACHER_PHOTO = "";
+
+/* TEACHER PHOTO */
+
+var teacherImgs = document.querySelectorAll('img[data-photo]');
+
+function applyTeacher(src){
+teacherImgs.forEach(function(img){
+img.src = src;
+});
+}
+
+var candidates = [];
+
+if(TEACHER_PHOTO){
+candidates.push(TEACHER_PHOTO);
+}
+
+candidates.push("teacher.jpg");
+
+for(var n=800;n<=899;n++){
+candidates.push(TEACHER_PREFIX.replace(/8$/,'')+n+".jpg");
+}
+
+var found = false;
+
+candidates.forEach(function(src){
+
+var im = new Image();
+
+im.onload = function(){
+if(!found){
+found = true;
+applyTeacher(src);
+}
+};
+
+im.src = src;
+
+});
+
+/* POSTER BACKGROUND */
+
+document.getElementById('mottoBg').style.backgroundImage =
+'url("'+POSTER_PHOTO+'")';
+
+/* LOADER */
+
+window.addEventListener('load',function(){
+
+setTimeout(function(){
+document.getElementById('loader').classList.add('hide');
+},700);
+
+});
+
+/* CLASS CARDS */
+
+var names = ['नर्सरी','1','2','3','4','5','6','7','8'];
+
+var wrap = document.getElementById('classWrap');
+
+names.forEach(function(n,i){
+
+var d = document.createElement('div');
+
+d.className = 'class-card k'+(i%4)+' reveal';
+
+d.style.transitionDelay = (i*0.06)+'s';
+
+d.innerHTML = i===0
+? '<span class="n">🧸</span><small>नर्सरी</small>'
+: '<span class="n">'+n+'</span><small>कक्षा</small>';
+
+wrap.appendChild(d);
+
+});
+
+/* MOBILE MENU */
+
+var burger = document.getElementById('burger');
+var menu = document.getElementById('menu');
+
+function closeMenu(){
+
+menu.classList.remove('open');
+burger.classList.remove('open');
+burger.setAttribute('aria-expanded','false');
+
+}
+
+burger.addEventListener('click',function(){
+
+var o = menu.classList.toggle('open');
+
+burger.classList.toggle('open',o);
+
+burger.setAttribute('aria-expanded',o);
+
+});
+
+menu.querySelectorAll('a').forEach(function(a){
+a.addEventListener('click',closeMenu);
+});
+
+/* SCROLL REVEAL */
+
+var io = new IntersectionObserver(function(entries){
+
+entries.forEach(function(e){
+
+if(e.isIntersecting){
+
+e.target.classList.add('show');
+
+io.unobserve(e.target);
+
+}
+
+});
+
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(function(el){
+io.observe(el);
+});
+
+/* COUNTERS */
+
+var co = new IntersectionObserver(function(entries){
+
+entries.forEach(function(e){
+
+if(!e.isIntersecting)return;
+
+var el = e.target;
+var end = +el.dataset.count;
+var v = 0;
+
+var t = setInterval(function(){
+
+v++;
+
+el.textContent = v;
+
+if(v>=end)clearInterval(t);
+
+},180);
+
+co.unobserve(el);
+
+});
+
+},{threshold:.6});
+
+document.querySelectorAll('[data-count]').forEach(function(el){
+
+el.textContent = '0';
+
+co.observe(el);
+
+});
+
+/* SCROLL PROGRESS + ACTIVE LINKS */
+
+var secs = document.querySelectorAll('main section[id]');
+var links = menu.querySelectorAll('a');
+var topBtn = document.getElementById('top');
+var prog = document.getElementById('prog');
+
+function onScroll(){
+
+var y = window.scrollY;
+
+var h = document.documentElement.scrollHeight-window.innerHeight;
+
+prog.style.width = (h>0 ? y/h*100 : 0)+'%';
+
+var p = y+140;
+
+secs.forEach(function(s){
+
+if(p>=s.offsetTop && p<s.offsetTop+s.offsetHeight){
+
+links.forEach(function(l){
+
+l.classList.toggle(
+'active',
+l.getAttribute('href')==='#'+s.id
+);
+
+});
+
+}
+
+});
+
+topBtn.classList.toggle('show',y>600);
+
+}
+
+window.addEventListener('scroll',onScroll,{passive:true});
+
+onScroll();
+
+/* BACK TO TOP */
+
+topBtn.addEventListener('click',function(){
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+});
+
+/* CURRENT YEAR */
+
+document.getElementById('yr').textContent =
+new Date().getFullYear();
+
+})();
+</script>
+
+</body>
+</html>
